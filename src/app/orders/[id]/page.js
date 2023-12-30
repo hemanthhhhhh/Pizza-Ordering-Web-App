@@ -28,7 +28,7 @@ export default function OrderPage() {
                 })
             })
         }
-    },[])
+    }, [id])
 
     let subtotal = 0
     if(order?.cartProducts) {

@@ -3,6 +3,7 @@ import NextAuth, { getServerSession } from "next-auth"
 import CredentialsProvider from "next-auth/providers/credentials"
 import {User} from '../../../../models/User'
 import { UserInfo } from "@/models/UserInfo";
+import bcrypt from "bcrypt";
 
 export const authOptions = {
   secret: process.env.SECRET,
@@ -38,7 +39,7 @@ export const authOptions = {
       if(!userEmail) {
         return false
       }
-      const userInfo = await UserInfo.findOne({email: userEmail})
+      const userInfo = await UserInfo.findOne({email:userEmail})
       if(!userInfo) {
         return false
       }
