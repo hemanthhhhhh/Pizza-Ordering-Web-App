@@ -1,4 +1,4 @@
-import Image from "next/image";
+
 import Trash from '../../components/icons/trash'
 import { CartProductPrice } from "../AppContext";
 
@@ -18,7 +18,7 @@ export default function CartProduct({product, onremove}) {
                                 {product.extras?.length > 0 && (
                                     <div className="text-sm text-gray-500"> 
                                         {product.extras.map(extra => (
-                                            <div>{extra.name} ${extra.price}</div>
+                                            <div key={extra.name}>{extra.name} ${extra.price}</div>
                                         ))}
                                     </div>
                                 )}
