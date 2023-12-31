@@ -1,6 +1,6 @@
 import * as mongoose from "mongoose";
 import CredentialsProvider from "next-auth/providers/credentials"
-import {User} from '../../../../models/User'
+import {User} from '../src/models/User'
 import bcrypt from "bcrypt";
 import { MongoDBAdapter } from "@auth/mongodb-adapter"
 
