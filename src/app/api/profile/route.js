@@ -20,7 +20,7 @@ export async function PUT(req) {
         filter = {email}
     }
     const user = await User.findOne(filter)
-    await User.updateOne(filter, {name, image})
+    await User.updateOne(filter, {name})
     await UserInfo.findOneAndUpdate({email:user.email}, otherUserInfo, {upsert: true})
     return Response.json(true)
 }
