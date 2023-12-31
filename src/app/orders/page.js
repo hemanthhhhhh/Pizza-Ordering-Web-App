@@ -48,13 +48,13 @@ export default function OrdersPage() {
                                     <div className="text-gray-500 text-sm">{dbTimeForHuman(order.createdAt)}</div>
                                 </div>
                                 <div className="text-gray-500 text-xs">
-                                    {order.cartProducts.map(p => p.name).join(' ,')}
+                                    {order.cartProducts.map(p => p.name).join(', ')}
                                 </div>
                             </div>
                         </div>
                         
                         <div className="justify-end flex gap-2 items-center whitespace-nowrap">
-                            <Link href={'/order/'+ order._id} className="button">Show order</Link>
+                            <Link href={'/orders/'+ order._id} className="button">Show order</Link>
                         </div>
                     </div>
                 ))} 
