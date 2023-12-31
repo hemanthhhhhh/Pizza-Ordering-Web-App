@@ -4,9 +4,11 @@ import CredentialsProvider from "next-auth/providers/credentials"
 import {User} from '../../../../models/User'
 import { UserInfo } from "@/models/UserInfo";
 import bcrypt from "bcrypt";
+import { MongoDBAdapter } from "@auth/mongodb-adapter"
 
 export const authOptions = {
   secret: process.env.SECRET,
+  adapter: MongoDBAdapter(clientPromise),
   providers: [
       CredentialsProvider({
           name: 'Credentials',
