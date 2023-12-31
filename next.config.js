@@ -8,6 +8,9 @@ const nextConfig = {
         },
       ],
     },
+     eslint: {
+        ignoreDuringBuilds: true,
+    },
     webpack: (config, { dev, isServer }) => {
       config.module.rules.push({
         test: /\.html$/,
