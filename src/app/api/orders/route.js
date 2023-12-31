@@ -9,6 +9,7 @@ export async function GET(req) {
     
     const session = await getServerSession(authOptions)
     const userEmail = session?.user?.email
+    let isAdmin = false
    
 
     const url = new URL(req.url);
@@ -18,6 +19,15 @@ export async function GET(req) {
     }
     
     if(userEmail) {
-        return Response.json(await Order.find({userEmail}))
+        const userInfo = await UserInfo.findOne({email:userEmail})
+        if(useInfo) {
+            isAdmin = false
+        }
+    }
+    if(isAdmin) {
+        return Response.json(await Order.find())
+    }
+    if(userEmail) {
+    return Response.json(await Order.find({userEmail}))
     }
 }
