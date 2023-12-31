@@ -5,7 +5,7 @@ import {User} from '../../../../models/User'
 import { UserInfo } from "@/models/UserInfo";
 import bcrypt from "bcrypt";
 
-const authOptions = {
+export const authOptions = {
   secret: process.env.SECRET,
   providers: [
       CredentialsProvider({
@@ -34,4 +34,4 @@ const authOptions = {
     }
 const handler = NextAuth(authOptions)
     
-export { handler as GET, handler as POST, authOptions}
+export { handler as GET, handler as POST}
