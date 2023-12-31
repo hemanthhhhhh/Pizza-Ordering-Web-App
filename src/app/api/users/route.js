@@ -8,7 +8,5 @@ export async function GET() {
 
         const users = await User.find() 
         return Response.json(users)
-   
-        return Response.json({})
     
 }
