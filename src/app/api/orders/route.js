@@ -17,8 +17,6 @@ export async function GET(req) {
         return Response.json(await Order.findById(_id))
     }
     
-    return Response.json(await Order.find())
-    
     if(userEmail) {
         return Response.json(await Order.find({userEmail}))
     }
