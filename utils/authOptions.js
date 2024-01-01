@@ -3,7 +3,7 @@ import CredentialsProvider from "next-auth/providers/credentials"
 import {User} from '../src/models/User'
 import bcrypt from "bcrypt";
 import { MongoDBAdapter } from "@auth/mongodb-adapter"
-
+import clientPromise from "@/libs/mongoConnect";
 
 export const authOptions = {
     secret: process.env.SECRET,
