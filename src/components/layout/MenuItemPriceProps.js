@@ -23,9 +23,9 @@ export default function MenuItemPriceProps({ name, addLabel, props, setProps }) 
         })
     }
 
-    function removeSize(indexToRemove) {
-        setProps(prev => prev.filter((v, index) => index !== indexToRemove))
-    }
+  function removeProp(indexToRemove) {
+    setProps(prev => prev.filter((v,index) => index !== indexToRemove));
+  }
 
     return (
         <div className="bg-gray-200 p-2 rounded-md mb-2">
