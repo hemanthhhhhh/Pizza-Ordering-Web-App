@@ -51,7 +51,7 @@ export default function MenuItemPriceProps({ name, addLabel, props, setProps }) 
                         <input type="text" placeholder="Extra price" value={size.price} onChange={ev => editSize(ev, index, 'price')} />
                     </div>
                     <div>
-                        <button className="bg-white mb-2 px-2" type="button" onClick={() => removeSize(index)}>
+                        <button className="bg-white mb-2 px-2" type="button" onClick={() => removeProp(index)}>
                             <Trash />
                         </button>
                     </div>
