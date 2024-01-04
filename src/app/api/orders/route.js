@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 import { getServerSession } from "next-auth";
-import {authOptions, isAdmin} from '../../../../utils/authOptions'
+import {authOptions} from '../../../../utils/authOptions'
 import {UserInfo} from '../../../models/UserInfo'
 import { Order } from "../../../models/Order";
 
@@ -9,7 +9,7 @@ export async function GET(req) {
     
     const session = await getServerSession(authOptions)
     const userEmail = session?.user?.email
-    const admin = await isAdmin();
+   
    
 
    const url = new URL(req.url);
@@ -18,9 +18,7 @@ export async function GET(req) {
       return Response.json( await Order.findById(_id) );
    }
 
-    if (admin) {
-    return Response.json( await Order.find() );
-  }
+   
 
   if (userEmail) {
     return Response.json( await Order.find({userEmail}) );
