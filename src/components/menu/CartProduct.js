@@ -28,7 +28,7 @@ export default function CartProduct({product, onremove}) {
                             </div>
                                 {!!onremove && (
                                 <div className="ml-2">
-                                    <button type="button" onClick={() => removeCartProduct(index)} className="p-2">
+                                    <button type="button" onClick={() => onremove(index)} className="p-2">
                                         <Trash />
                                     </button>
                                 </div>
