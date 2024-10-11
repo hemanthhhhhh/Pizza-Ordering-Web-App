@@ -14,7 +14,7 @@ export default function LoginPage() {
         ev.preventDefault();
         setLoginInProgress(true)
         
-        await signIn('credentials', {email, password})
+        await signIn('credentials', {email, password, callbackUrl: '/'})
 
         setLoginInProgress(false)
     }
@@ -31,7 +31,9 @@ export default function LoginPage() {
                 <div className="my-4 text-center text-gray-500">
                     or login with provider
                 </div>
-                <button className="flex gap-4 justify-center">
+                <button className="flex gap-4 justify-center"
+                 onClick={() => signIn('google', {callbackUrl: '/'})}
+                 >
                     <Image src={'/google.png'} alt={''} height={24} width={24}/>
                     Login with google
                 </button>
