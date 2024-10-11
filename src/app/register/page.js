@@ -27,7 +27,7 @@ export default function RegisterPage() {
         else {
             setError(true)
         }
-        setCreatingUser(true)
+        setCreatingUser(false)
     }
 
     return (
