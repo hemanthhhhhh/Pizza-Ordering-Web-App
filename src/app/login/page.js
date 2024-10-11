@@ -3,7 +3,7 @@ import { useState } from "react"
 import Image from "next/image"
 import {signIn} from "next-auth/react";
 // import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-// import { auth } from "../api/auth/[...nextauth]/route";
+import { auth } from "../api/auth/[...nextauth]/route";
 
 export default function LoginPage() {
     const [email, setEmail] = useState('')
